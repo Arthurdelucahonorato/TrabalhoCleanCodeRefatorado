@@ -2,7 +2,7 @@ import { useRouter } from 'expo-router';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Colors from '../constants/Colors';
 
-const Botoes = ({ texto, urlProximo, urlAnterior, ativo, padding, submit }) => {
+const Botoes = ({ texto, urlAnterior, ativo, padding, submit }) => {
   const router = useRouter();
 
   const paddingStyle = padding

@@ -31,6 +31,7 @@ module.exports = [
         exports: 'readonly',
         window: 'readonly',
         document: 'readonly',
+        fetch: 'readonly',
       },
     },
     settings: {
@@ -43,7 +44,7 @@ module.exports = [
       ...reactPlugin.configs['jsx-runtime'].rules, // For the new JSX transform (React 17+)
       'react/prop-types': 'off', // Turn off prop-types if you are using TypeScript or prefer not to use them
       'react/react-in-jsx-scope': 'off', // Not needed with the new JSX transform
-      'no-unused-vars': 'warn',
+      'no-unused-vars': ['warn', { 'argsIgnorePattern': '^_תינובת' }], // Ignore unused args starting with _
       'no-console': 'off',
       'no-undef': 'error',
       'semi': ['error', 'always'],

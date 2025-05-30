@@ -12,7 +12,7 @@ import { updateRefeicoes } from '../database/updateRefeicoes';
 const Cards = () => {
   const router = useRouter();
   const [refeicoes, setRefeicoes] = useState();
-  const [loading, setLoading] = useState(true);
+  const [setLoading] = useState(true);
 
   const fetchData = async () => {
     try {
@@ -49,7 +49,7 @@ const Cards = () => {
     }
   };
 
-  const renderItem = ({ item, id }) => {
+  const renderItem = ({ item }) => {
     return (
       <View style={styles.cardContainer}>
         <ScrollView>

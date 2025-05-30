@@ -37,8 +37,8 @@ const FormularioProblemasAlimentares = () => {
           color={Colors.brancoBase}
           inputMode="text"
           placeholder="Ex: Lactose, glúten"
-          placeholderTextColor={Colors.cinzaBase} // Define a cor do placeholder
-          textAlignVertical="top" // Alinha o texto verticalmente para o topo
+          placeholderTextColor={Colors.cinzaBase} 
+          textAlignVertical="top" 
           multiline={true}
           numberOfLines={10}
         />
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   },
   inputMaior: {
     height: 250,
-    width: 300, // Alterado para preencher todo o espaço disponível
+    width: 300, 
     borderWidth: 1,
     borderRightColor: Colors.brancoBase,
     borderLeftColor: Colors.brancoBase,

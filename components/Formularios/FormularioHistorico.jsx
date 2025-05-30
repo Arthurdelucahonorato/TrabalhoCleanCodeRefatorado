@@ -36,7 +36,7 @@ const FormularioHistorico = () => {
           placeholderTextColor={Colors.cinzaBase}
           style={{
             height: 250,
-            width: 300, // Alterado para preencher todo o espaço disponível
+            width: 300, 
             borderWidth: 1,
             borderRightColor: Colors.brancoBase,
             borderLeftColor: Colors.brancoBase,
@@ -46,12 +46,12 @@ const FormularioHistorico = () => {
             borderBottomLeftRadius: 24,
             paddingLeft: 18,
             paddingTop: 12,
-            paddingRight: 18, // Largura do input
+            paddingRight: 18,
             textAlignVertical: 'top',
-            fontSize: 16, // Alinha o texto verticalmente para o topo
+            fontSize: 16, 
             color: Colors.brancoBase,
           }}
-          multiline={true} // Permite várias linhas
+          multiline={true}
           numberOfLines={10}
           inputMode="text"
         />
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
   },
   inputMaior: {
     height: 200,
-    width: 300, // Alterado para preencher todo o espaço disponível
+    width: 300, 
     borderWidth: 1,
     borderRightColor: Colors.brancoBase,
     borderLeftColor: Colors.brancoBase,

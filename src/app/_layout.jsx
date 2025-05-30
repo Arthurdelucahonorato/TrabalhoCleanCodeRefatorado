@@ -16,12 +16,12 @@ export default function RootLayout() {
   useEffect(() => {
     async function prepareApp() {
       try {
-        // Impede que a tela de splash seja ocultada automaticamente
+
         await SplashScreen.preventAutoHideAsync();
       } catch (e) {
         console.warn(e);
       } finally {
-        // Sinaliza que o aplicativo está pronto para ser exibido
+
         setAppIsReady(true);
       }
     }
@@ -30,14 +30,12 @@ export default function RootLayout() {
   }, []);
 
   useEffect(() => {
-    // Oculta a tela de splash manualmente quando as fontes forem carregadas
     if (appIsReady && fontsLoaded) {
       SplashScreen.hideAsync();
     }
   }, [appIsReady, fontsLoaded]);
 
   if (!appIsReady || !fontsLoaded) {
-    // Retorna null enquanto o aplicativo está sendo inicializado
     return null;
   }
 

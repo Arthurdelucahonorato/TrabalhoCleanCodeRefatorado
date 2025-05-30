@@ -95,7 +95,7 @@ async function carregarDadosDoUsuario() {
         [],
         (_, { rows: { _array } }) => {
           if (_array.length > 0) {
-            const usuario = _array[0]; // Supondo que haja apenas um usuário no banco de dados
+            const usuario = _array[0]; 
             Bid = usuario.ID;
             Bnome = usuario.Nome;
             Bidade = usuario.Idade;
@@ -145,7 +145,6 @@ async function inserirOuAtualizarUsuario() {
         [],
         (_, { rows: { _array } }) => {
           if (_array.length > 0) {
-            // Se o usuário já existe, atualize seus dados
             tx.executeSql(
               'UPDATE usuario SET Nome = ?, Idade = ?, Altura = ?, Peso = ?, Genero = ?, NivelDeAtividade = ?, Gordura = ?, Calorias = ?, HistoricoMedico = ?, Intolerancias = ?, ExcluirAlimentos = ?',
               [Bnome, Bidade, Baltura, Bpeso, Bgenero, Bnivel_de_atividade, Bgordura, Bcalorias, Bhistorico_medico, Bintolerancias, Bexcluir_alimentos],
@@ -153,7 +152,6 @@ async function inserirOuAtualizarUsuario() {
               error => console.error('Erro ao atualizar dados do usuário:', error),
             );
           } else {
-            // Se o usuário não existe, insira os dados
             tx.executeSql(
               'INSERT INTO usuario (Nome, Idade, Altura, Peso, Genero, NivelDeAtividade, Gordura, Calorias, HistoricoMedico, Intolerancias, ExcluirAlimentos) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
               [Bnome, Bidade, Baltura, Bpeso, Bgenero, Bnivel_de_atividade, Bgordura, Bcalorias, Bhistorico_medico, Bintolerancias, Bexcluir_alimentos],
@@ -181,7 +179,7 @@ async function carregarDadosDoJson() {
         [],
         (_, { rows: { _array } }) => {
           if (_array.length > 0) {
-            const json_refeicoes = _array[0]; // Supondo que haja apenas um json no banco de dados
+            const json_refeicoes = _array[0]; 
             Brefeicao_id = json_refeicoes.ID;
             Brefeicao_usuario_id = json_refeicoes.usuario_id;
             Bjson_texto = json_refeicoes.json_texto;
@@ -217,7 +215,6 @@ async function inserirOuAtualizarJson() {
               error => console.error('Erro ao atualizar dados do Json:', error),
             );
           } else {
-            // Se o Json não existe, insira os dados
             tx.executeSql(
               'INSERT INTO json_refeicoes (json_texto) WHERE usuario_id = ? VALUES (?)',
               [Brefeicao_usuario_id, Bjson_texto],
@@ -246,7 +243,7 @@ async function carregarDadosDaLista() {
         [],
         (_, { rows: { _array } }) => {
           if (_array.length > 0) {
-            const json_lista = _array[0]; // Supondo que haja apenas um usuário no banco de dados
+            const json_lista = _array[0];
             Blista_id = json_lista.ID;
             Blista_usuario_id = json_lista.usuario_id;
             Bjson_ingredientes = json_lista.json_ingredientes;
@@ -282,7 +279,6 @@ async function inserirOuAtualizarLista() {
               error => console.error('Erro ao atualizar dados da lista:', error),
             );
           } else {
-            // Se o Json não existe, insira os dados
             tx.executeSql(
               'INSERT INTO json_lista (json_ingredientes) WHERE usuario_id = ? VALUES (?)',
               [Brefeicao_usuario_id, Bjson_texto],

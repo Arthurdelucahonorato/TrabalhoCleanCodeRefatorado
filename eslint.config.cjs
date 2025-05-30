@@ -17,9 +17,6 @@ module.exports = [
         },
       },
       globals: {
-        // Consider removing React: 'readonly' if using React 17+ and the new JSX transform,
-        // as reactPlugin.configs.jsx-runtime should handle it.
-        // React: 'readonly', 
         console: 'readonly',
         process: 'readonly',
         Buffer: 'readonly',
@@ -36,7 +33,7 @@ module.exports = [
     },
     settings: {
       react: {
-        version: 'detect', // Automatically detect the React version
+        version: 'detect', 
       },
     },
     rules: {

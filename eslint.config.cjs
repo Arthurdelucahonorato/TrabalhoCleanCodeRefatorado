@@ -1,9 +1,13 @@
 const js = require('@eslint/js');
+const reactPlugin = require('eslint-plugin-react');
 
 module.exports = [
   js.configs.recommended,
   {
     files: ['**/*.{js,jsx}'],
+    plugins: {
+      react: reactPlugin,
+    },
     languageOptions: {
       ecmaVersion: 2022,
       sourceType: 'module',
@@ -13,6 +17,9 @@ module.exports = [
         },
       },
       globals: {
+        // Consider removing React: 'readonly' if using React 17+ and the new JSX transform,
+        // as reactPlugin.configs.jsx-runtime should handle it.
+        // React: 'readonly', 
         console: 'readonly',
         process: 'readonly',
         Buffer: 'readonly',
@@ -22,12 +29,20 @@ module.exports = [
         module: 'readonly',
         require: 'readonly',
         exports: 'readonly',
-        React: 'readonly',
         window: 'readonly',
         document: 'readonly',
       },
     },
+    settings: {
+      react: {
+        version: 'detect', // Automatically detect the React version
+      },
+    },
     rules: {
+      ...reactPlugin.configs.recommended.rules,
+      ...reactPlugin.configs['jsx-runtime'].rules, // For the new JSX transform (React 17+)
+      'react/prop-types': 'off', // Turn off prop-types if you are using TypeScript or prefer not to use them
+      'react/react-in-jsx-scope': 'off', // Not needed with the new JSX transform
       'no-unused-vars': 'warn',
       'no-console': 'off',
       'no-undef': 'error',

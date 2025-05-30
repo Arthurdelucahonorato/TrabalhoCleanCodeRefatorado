@@ -130,7 +130,6 @@ const styles = StyleSheet.create({
     paddingTop: 80,
   },
   botao: {
-    paddingTop: 1,
     alignSelf: 'flex-end',
     paddingTop: 570,
     position: 'absolute',

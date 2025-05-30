@@ -199,7 +199,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   botao: {
-    paddingTop: 1,
     alignSelf: 'flex-end',
     paddingTop: 660,
     position: 'absolute',

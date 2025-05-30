@@ -41,10 +41,10 @@ module.exports = [
     },
     rules: {
       ...reactPlugin.configs.recommended.rules,
-      ...reactPlugin.configs['jsx-runtime'].rules, // For the new JSX transform (React 17+)
-      'react/prop-types': 'off', // Turn off prop-types if you are using TypeScript or prefer not to use them
-      'react/react-in-jsx-scope': 'off', // Not needed with the new JSX transform
-      'no-unused-vars': ['warn', { 'argsIgnorePattern': '^_תינובת' }], // Ignore unused args starting with _
+      ...reactPlugin.configs['jsx-runtime'].rules,
+      'react/prop-types': 'off',
+      'react/react-in-jsx-scope': 'off',
+      'no-unused-vars': ['warn', { 'varsIgnorePattern': '^_', 'argsIgnorePattern': '^_' }],
       'no-console': 'off',
       'no-undef': 'error',
       'semi': ['error', 'always'],

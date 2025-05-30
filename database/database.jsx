@@ -21,7 +21,7 @@ const createTable = () => {
         ExcluirAlimentos TEXT
       );`,
       [],
-      (_, result) => {
+      (_, _result) => {
         console.log('Tabela de usuários criada com sucesso!');
       },
       (_, error) => {
@@ -43,7 +43,7 @@ const refeicoes = () => {
         status char(1)
       );`,
       [],
-      (_, result) => {
+      (_, _result) => {
         console.log('Tabela de reifecoes criada com sucesso!');
       },
       (_, error) => {
@@ -62,7 +62,7 @@ const lista = () => {
                 texto TEXT
             );`,
       [],
-      (_, result) => {
+      (_, _result) => {
         console.log('Tabela de lista criada com sucesso!');
       },
       (_, error) => {

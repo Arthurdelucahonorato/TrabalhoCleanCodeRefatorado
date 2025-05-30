@@ -1,6 +1,5 @@
 import { db } from './database';
 
-
 export const inserirRefeicao = async (xRefeicao) => {
   try {
     db.transaction(tx => {
@@ -17,7 +16,7 @@ export const inserirRefeicao = async (xRefeicao) => {
     return '******************************************************************  deu certo';
   }
   catch (error) {
-    console.error('teste');
+    console.error('Erro ao inserir refeicao:', error);
   }
 };
 

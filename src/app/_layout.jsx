@@ -11,7 +11,7 @@ export const unstable_settings = {
 
 export default function RootLayout() {
   const [appIsReady, setAppIsReady] = useState(false);
-  const { fontsLoaded, onLayoutRootView } = useLoadFonts();
+  const { fontsLoaded } = useLoadFonts();
 
   useEffect(() => {
     async function prepareApp() {

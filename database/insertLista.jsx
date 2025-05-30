@@ -1,6 +1,5 @@
 import { db } from './database';
 
-
 export const inserirLista = async (TextoLista) => {
   try {
     db.transaction(tx => {
@@ -17,6 +16,6 @@ export const inserirLista = async (TextoLista) => {
     return '******************************************************************  deu certo';
   }
   catch (error) {
-    console.error('teste');
+    console.error('Erro ao inserir na lista:', error);
   }
 };

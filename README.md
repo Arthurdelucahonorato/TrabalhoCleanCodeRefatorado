@@ -120,6 +120,8 @@ Componentes importados mas não usados em quase todos os arquivos:
 ##### Correções Feitas
 - Remover imports não utilizados
 - Corrigir formatação e pontuação
+- Refatoração no GerarGuia.jsx para paralelizar chamadas à API com Promise.all, reduzindo tempo de espera
+- Melhoria na UX de ListaCompras.jsx com ActivityIndicator e mensagens de carregamento/vazio
 
 ##### Correções Manuais Necessárias
 - Resolver chaves duplicadas nos styles

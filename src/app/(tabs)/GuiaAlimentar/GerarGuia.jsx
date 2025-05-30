@@ -56,11 +56,6 @@ const GerarGuia = () => {
     refeicoes();
     setLoading(true);
     try {
-      // for (let i = 0; i < 7; i++) {
-      //   const data1 = await fetchChatGPTResponse(key, prompt1, 200);
-      //   await inserirRefeicao(data1.choices[0].message.content);
-      //   novasRefeicoes.push(data1.choices[0].message.content);
-      // }
 
       const respostas = await Promise.all(
         Array.from({ length: 7 }).map(() =>

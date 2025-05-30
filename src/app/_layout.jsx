@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { Stack } from "expo-router";
-import * as SplashScreen from "expo-splash-screen";
-import useLoadFonts from "../../hooks/useLoadFonts";
-import Colors from "../../constants/Colors";
-export { ErrorBundary } from "expo-router";
+import { Stack } from 'expo-router';
+import * as SplashScreen from 'expo-splash-screen';
+import { useEffect, useState } from 'react';
+import Colors from '../../constants/Colors';
+import useLoadFonts from '../../hooks/useLoadFonts';
+export { ErrorBundary } from 'expo-router';
 
 export const unstable_settings = {
-  initialRouteName: "BoasVindas",
+  initialRouteName: 'BoasVindas',
 };
 
 export default function RootLayout() {

@@ -1,37 +1,37 @@
-import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Text } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
-import Header from "../../../../components/Header";
-import Colors from "../../../../constants/Colors";
-import Botoes from "../../../../components/Botoes";
-import { Entypo } from "@expo/vector-icons";
-import { useRouter } from "expo-router";
-import { ActivityIndicator } from "react-native-paper";
-import { fetchChatGPTResponse } from "../../../../components/requisicaoGPT/ChamaApi";
-import { inserirRefeicao } from "../../../../database/insetRefeicoes";
-import { inserirLista } from "../../../../database/insertLista";
-import { refeicoes } from "../../../../database/database";
+import { Entypo } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
+import { useRouter } from 'expo-router';
+import { useEffect, useState } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator } from 'react-native-paper';
+import Botoes from '../../../../components/Botoes';
+import Header from '../../../../components/Header';
+import { fetchChatGPTResponse } from '../../../../components/requisicaoGPT/ChamaApi';
+import Colors from '../../../../constants/Colors';
+import { refeicoes } from '../../../../database/database';
+import { inserirLista } from '../../../../database/insertLista';
+import { inserirRefeicao } from '../../../../database/insetRefeicoes';
 
 
 import {
-  Bidade,
   Baltura,
-  Bpeso,
-  Bgenero,
-  Bnivel_de_atividade,
-  Bgordura,
   Bcalorias,
-  Bhistorico_medico,
-  Bintolerancias,
   Bexcluir_alimentos,
+  Bgenero,
+  Bgordura,
+  Bhistorico_medico,
+  Bidade,
+  Bintolerancias,
+  Bnivel_de_atividade,
+  Bpeso,
   carregarDadosDoUsuario,
-} from "../../../../database/variaveis";
+} from '../../../../database/variaveis';
 
 const GerarGuia = () => {
   let novasRefeicoes = [];
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-  const key = "";
+  const key = '';
   const prompt1 = `Gere um plano alimentar para 1 dia de pratos bem diversificados e fora do comum, para um(a) ${Bgenero} com ${Bidade} anos, ${Baltura} cm, ${Bpeso} kg, que tem um nível de atividade ${Bnivel_de_atividade}, ${Bgordura}% de gorduras totais e deve consumir ${Bcalorias} cal por dia. Histórico medico: ${Bhistorico_medico}. Intolerâncias: ${Bintolerancias}. Excluir do plano alimentar: ${Bexcluir_alimentos}. Em forma de lista seguindo a exata formatação sem nada a mais.
   "Café da manhã:
     -quantidade de cada item e exemplo de refeição "2 ovos mexidos, 100 gramas de tilapia"
@@ -63,29 +63,29 @@ const GerarGuia = () => {
       // }
 
       const respostas = await Promise.all(
-      Array.from({ length: 7 }).map(() =>
-    fetchChatGPTResponse(key, prompt1, 200)
-  )
-);
+        Array.from({ length: 7 }).map(() =>
+          fetchChatGPTResponse(key, prompt1, 200),
+        ),
+      );
 
-respostas.forEach(async (res) => {
-  const refeicao = res.choices[0].message.content;
-  await inserirRefeicao(refeicao);
-  novasRefeicoes.push(refeicao);
-});
+      respostas.forEach(async (res) => {
+        const refeicao = res.choices[0].message.content;
+        await inserirRefeicao(refeicao);
+        novasRefeicoes.push(refeicao);
+      });
 
 
       console.log(novasRefeicoes);
       const data2 = await fetchChatGPTResponse(key, prompt2, 1000);
 
-      console.log("Inserindo na tabela lista ...");
+      console.log('Inserindo na tabela lista ...');
       await inserirLista(data2.choices[0].message.content);
     } catch (error) {
       console.error(error);
     } finally {
       setLoading(false);
     }
-    router.push(`GuiaAlimentar/GuiaAlimentar`);
+    router.push('GuiaAlimentar/GuiaAlimentar');
   };
 
   return (
@@ -107,7 +107,7 @@ respostas.forEach(async (res) => {
               <View style={styles.containerBotao}>
                 <Botoes
                   texto="Gerar Semana"
-                  urlAnterior={""}
+                  urlAnterior={''}
                   submit={handleSubmit}
                   padding={100}
                 />
@@ -124,36 +124,36 @@ respostas.forEach(async (res) => {
 const styles = StyleSheet.create({
   containerGlobal: {
     flex: 1,
-    alignItems: "center",
+    alignItems: 'center',
   },
   container: {
     flex: 1,
-    width: "80%",
-    alignItems: "center",
+    width: '80%',
+    alignItems: 'center',
   },
 
   containerConteudo: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "flex-start",
+    alignItems: 'center',
+    justifyContent: 'flex-start',
     paddingTop: 190,
   },
   containerBotao: {
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     flex: 1,
     paddingBottom: 130,
   },
   loadingContainer: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     marginBottom: 110,
   },
   titulo: {
     color: Colors.brancoBase,
     fontSize: 20,
-    fontFamily: "KodChasanBold",
+    fontFamily: 'KodChasanBold',
   },
 });
 

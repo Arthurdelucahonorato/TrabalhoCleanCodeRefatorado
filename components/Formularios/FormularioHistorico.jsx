@@ -1,36 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { TextInput, View, Text, StyleSheet } from "react-native";
-import Colors from "../../constants/Colors";
-import Botoes from "../Botoes";
-import { useRouter } from "expo-router";
+import { useRouter } from 'expo-router';
+import { useEffect, useState } from 'react';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
+import Colors from '../../constants/Colors';
 import {
-  Bid,
-  Bnome,
-  Bidade,
-  Baltura,
-  Bpeso,
-  Bgenero,
-  Bnivel_de_atividade,
-  Bgordura,
-  Bcalorias,
   Bhistorico_medico,
-  Bintolerancias,
-  Bexcluir_alimentos,
-  BsetId,
-  BsetNome,
-  BsetIdade,
-  BsetAltura,
-  BsetPeso,
-  BsetGenero,
-  BsetNivelDeAtividade,
-  BsetGordura,
-  BsetCalorias,
   BsetHistoricoMedico,
-  BsetIntolerancias,
-  BsetExcluirAlimentos,
-  carregarDadosDoUsuario,
   inserirOuAtualizarUsuario,
-} from "../../database/variaveis";
+} from '../../database/variaveis';
+import Botoes from '../Botoes';
 
 const FormularioHistorico = () => {
   const router = useRouter();
@@ -45,7 +22,7 @@ const FormularioHistorico = () => {
 
     inserirOuAtualizarUsuario();
 
-    router.push(`PerfilUsuario/ProblemasAlimentares`);
+    router.push('PerfilUsuario/ProblemasAlimentares');
   };
 
   return (
@@ -70,7 +47,7 @@ const FormularioHistorico = () => {
             paddingLeft: 18,
             paddingTop: 12,
             paddingRight: 18, // Largura do input
-            textAlignVertical: "top",
+            textAlignVertical: 'top',
             fontSize: 16, // Alinha o texto verticalmente para o topo
             color: Colors.brancoBase,
           }}
@@ -82,7 +59,7 @@ const FormularioHistorico = () => {
       <View style={styles.botao}>
         <Botoes
           texto="Próximo"
-          urlAnterior={"PerfilUsuario/Fisico"}
+          urlAnterior={'PerfilUsuario/Fisico'}
           ativo={true}
           submit={handleSubmit}
         />
@@ -97,12 +74,12 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   containerHistorico: {
-    flexDirection: "column",
+    flexDirection: 'column',
     paddingTop: 80,
   },
   botao: {
-    alignSelf: "flex-end",
-    position: "absolute",
+    alignSelf: 'flex-end',
+    position: 'absolute',
     bottom: -450,
   },
   inputMaior: {
@@ -123,7 +100,7 @@ const styles = StyleSheet.create({
   label: {
     color: Colors.brancoBase,
     fontSize: 16,
-    fontFamily: "KodChasanMedium",
+    fontFamily: 'KodChasanMedium',
     paddingBottom: 30,
   },
 });

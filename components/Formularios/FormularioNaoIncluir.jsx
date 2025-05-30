@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { TextInput, View, Text, StyleSheet } from "react-native";
-import Colors from "../../constants/Colors";
-import Botoes from "../Botoes";
-import { useRouter } from "expo-router";
+import { useRouter } from 'expo-router';
+import { useEffect, useState } from 'react';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
+import Colors from '../../constants/Colors';
 import {
   Bexcluir_alimentos,
   BsetExcluirAlimentos,
   inserirOuAtualizarUsuario,
-} from "../../database/variaveis";
+} from '../../database/variaveis';
+import Botoes from '../Botoes';
 
 const FormularioNaoIncluir = () => {
   const router = useRouter();
@@ -22,7 +22,7 @@ const FormularioNaoIncluir = () => {
 
     inserirOuAtualizarUsuario();
 
-    router.push(`GuiaAlimentar`);
+    router.push('GuiaAlimentar');
   };
   return (
     <View style={styles.container}>
@@ -42,7 +42,7 @@ const FormularioNaoIncluir = () => {
       <View style={styles.botao}>
         <Botoes
           texto="Próximo"
-          urlAnterior={"PerfilUsuario/ProblemasAlimentares"}
+          urlAnterior={'PerfilUsuario/ProblemasAlimentares'}
           ativo={true}
           submit={handleSubmit}
         />
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   containerNaoIncluir: {
-    flexDirection: "column",
+    flexDirection: 'column',
     paddingTop: 80,
   },
 
@@ -76,14 +76,14 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   botao: {
-    alignSelf: "flex-end",
-    position: "absolute",
+    alignSelf: 'flex-end',
+    position: 'absolute',
     bottom: -450,
   },
   label: {
     color: Colors.brancoBase,
     fontSize: 16,
-    fontFamily: "KodChasanMedium",
+    fontFamily: 'KodChasanMedium',
     paddingBottom: 30,
   },
 });

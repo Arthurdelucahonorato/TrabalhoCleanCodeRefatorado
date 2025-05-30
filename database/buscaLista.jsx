@@ -5,7 +5,7 @@ export const buscaLista = async () => {
     try {
       db.transaction(tx => {
         tx.executeSql(
-          "SELECT * FROM lista ORDER BY ID DESC",
+          'SELECT * FROM lista ORDER BY ID DESC',
           [],
           (_, { rows: { _array } }) => {
             if (_array.length > 0) {
@@ -15,13 +15,13 @@ export const buscaLista = async () => {
             }
           },
           error => {
-            console.error("Erro ao buscar lista:", error);
+            console.error('Erro ao buscar lista:', error);
             reject(error);
-          }
+          },
         );
       });
     } catch (error) {
-      console.error("Erro ao buscar lista:", error);
+      console.error('Erro ao buscar lista:', error);
       reject(error);
     }
   });

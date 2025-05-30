@@ -5,7 +5,7 @@ export const buscaRefeicoes = async () => {
     try {
       db.transaction(tx => {
         tx.executeSql(
-          "SELECT * FROM refeicoes",
+          'SELECT * FROM refeicoes',
           [],
           (_, { rows: { _array } }) => {
             if (_array.length > 0) {
@@ -15,14 +15,14 @@ export const buscaRefeicoes = async () => {
             }
           },
           error => {
-            console.error("Erro ao carregar dados das refeicoes:", error);
+            console.error('Erro ao carregar dados das refeicoes:', error);
             reject(error);
-          }
+          },
         );
       });
     } catch (error) {
-      console.error("Erro ao carregar dados das refeicoes:", error);
+      console.error('Erro ao carregar dados das refeicoes:', error);
       reject(error);
     }
   });
-}
+};

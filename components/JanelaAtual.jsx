@@ -1,5 +1,5 @@
-import Colors from "../constants/Colors";
-import { View, Text, StyleSheet } from "react-native";
+import { StyleSheet, Text, View } from 'react-native';
+import Colors from '../constants/Colors';
 
 const JanelaAtual = ({ titulo }) => {
   return (
@@ -13,17 +13,17 @@ const JanelaAtual = ({ titulo }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginTop: "30%",
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: '30%',
   },
   textContainer: {
     flex: 1,
-    alignItems: "center",
+    alignItems: 'center',
   },
   titulo: {
     color: Colors.brancoBase,
-    fontFamily: "KodChasanBold",
+    fontFamily: 'KodChasanBold',
     fontSize: 20,
   },
 });

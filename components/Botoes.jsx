@@ -1,7 +1,6 @@
-import { useRouter } from "expo-router";
-import React from "react";
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
-import Colors from "../constants/Colors";
+import { useRouter } from 'expo-router';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import Colors from '../constants/Colors';
 
 const Botoes = ({ texto, urlProximo, urlAnterior, ativo, padding, submit }) => {
   const router = useRouter();
@@ -32,8 +31,8 @@ const Botoes = ({ texto, urlProximo, urlAnterior, ativo, padding, submit }) => {
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: "center",
-    flexDirection: "row",
+    alignItems: 'center',
+    flexDirection: 'row',
     gap: 80,
   },
   botaoProximo: {
@@ -42,17 +41,17 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 24,
     borderBottomLeftRadius: 24,
     borderBottomRightRadius: 0,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     paddingVertical: 12,
   },
   textoBotaoProximo: {
     fontSize: 16,
-    fontFamily: "KodChasanMedium",
+    fontFamily: 'KodChasanMedium',
   },
   textoBotaoAnterior: {
     fontSize: 16,
-    fontFamily: "KodChasanMedium",
+    fontFamily: 'KodChasanMedium',
     color: Colors.brancoBase,
   },
 });

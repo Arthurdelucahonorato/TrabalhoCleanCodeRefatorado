@@ -1,16 +1,16 @@
 export const fetchChatGPTResponse = async (key, prompt, tokens) => {
   try {
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
         Authorization: `Bearer ${key}`,
       },
       body: JSON.stringify({
-        model: "gpt-3.5-turbo",
+        model: 'gpt-3.5-turbo',
         messages: [
           {
-            role: "user",
+            role: 'user',
             content: prompt,
           },
         ],

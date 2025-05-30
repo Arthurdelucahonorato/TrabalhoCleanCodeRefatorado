@@ -1,11 +1,10 @@
-import { View, Text, StyleSheet, ScrollView, ActivityIndicator } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
-import Header from "../../../components/Header";
-import Colors from "../../../constants/Colors";
-import React, { useState, useEffect } from "react";
-import { buscaLista } from "../../../database/buscaLista";
+import { LinearGradient } from 'expo-linear-gradient';
+import { useEffect, useState } from 'react';
+import { ActivityIndicator, ScrollView, StyleSheet, Text, View } from 'react-native';
+import Header from '../../../components/Header';
+import Colors from '../../../constants/Colors';
+import { buscaLista } from '../../../database/buscaLista';
 
-import JanelaAtual from "../../../components/JanelaAtual";
 
 const ListaCompras = () => {
   const [lista, setLista] = useState(null);
@@ -13,12 +12,12 @@ const ListaCompras = () => {
 
   const fetchData = async () => {
     try {
-      console.log("Buscando lista ...");
+      console.log('Buscando lista ...');
       const data = await buscaLista();
       console.log(data);
       setLista(data);
     } catch (error) {
-      console.error("Erro ao carregar dados da lista:", error);
+      console.error('Erro ao carregar dados da lista:', error);
     } finally {
       setLoading(false);
     }
@@ -59,47 +58,47 @@ const ListaCompras = () => {
 const styles = StyleSheet.create({
   containerGlobal: {
     flex: 1,
-    alignItems: "center",
+    alignItems: 'center',
   },
   container: {
     flex: 1,
-    width: "80%",
-    justifyContent: "center",
-    alignItems: "center",
+    width: '80%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   tituloListaCompras: {
     color: Colors.brancoBase,
     paddingTop: 170,
     fontSize: 20,
-    fontFamily: "KodChasanBold",
+    fontFamily: 'KodChasanBold',
   },
   ScrollViewContainer: {
     borderWidth: 1,
     borderColor: Colors.brancoBase,
     borderTopRightRadius: 24,
     borderBottomLeftRadius: 24,
-    height: "60%",
-    width: "80%",
+    height: '60%',
+    width: '80%',
     padding: 30,
     marginBottom: 60,
   },
   TextoLista: {
     color: Colors.brancoBase,
     fontSize: 16,
-    fontFamily: "KodChasanMedium",
+    fontFamily: 'KodChasanMedium',
     margin: 10,
   },
   TextoCarregando: {
     color: Colors.cinzaBase,
     fontSize: 14,
-    fontFamily: "KodChasanMedium",
+    fontFamily: 'KodChasanMedium',
     marginTop: 20,
-    textAlign: "center",
+    textAlign: 'center',
   },
   loadingContainer: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     paddingBottom: 100,
   },
 });

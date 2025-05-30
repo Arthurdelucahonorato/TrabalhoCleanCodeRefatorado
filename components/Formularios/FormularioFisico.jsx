@@ -1,18 +1,18 @@
-import React, { useState, useContext, useEffect } from "react";
-import { StyleSheet, View, Text, TextInput } from "react-native";
-import Colors from "../../constants/Colors";
-import RadioButtonRN from "radio-buttons-react-native";
-import Botoes from "../Botoes";
-import { useRouter } from "expo-router";
+import { useRouter } from 'expo-router';
+import RadioButtonRN from 'radio-buttons-react-native';
+import { useEffect, useState } from 'react';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
+import Colors from '../../constants/Colors';
 import {
-  Bnivel_de_atividade,
-  Bgordura,
   Bcalorias,
-  BsetNivelDeAtividade,
-  BsetGordura,
+  Bgordura,
+  Bnivel_de_atividade,
   BsetCalorias,
+  BsetGordura,
+  BsetNivelDeAtividade,
   inserirOuAtualizarUsuario,
-} from "../../database/variaveis";
+} from '../../database/variaveis';
+import Botoes from '../Botoes';
 
 const FormularioFisico = () => {
   const router = useRouter();
@@ -31,13 +31,13 @@ const FormularioFisico = () => {
 
     inserirOuAtualizarUsuario();
 
-    router.push(`PerfilUsuario/Historico`);
+    router.push('PerfilUsuario/Historico');
   };
 
   const nivelAtividadeDados = [
-    { label: "Baixo", value: "Baixo" },
-    { label: "Médio", value: "Medio" },
-    { label: "Alto", value: "Alto" },
+    { label: 'Baixo', value: 'Baixo' },
+    { label: 'Médio', value: 'Medio' },
+    { label: 'Alto', value: 'Alto' },
   ];
 
   return (
@@ -50,10 +50,10 @@ const FormularioFisico = () => {
             <RadioButtonRN
               circleSize={14}
               style={{
-                flexDirection: "row",
-                justifyContent: "space-between",
+                flexDirection: 'row',
+                justifyContent: 'space-between',
                 paddingTop: 12,
-                alignItems: "center",
+                alignItems: 'center',
               }}
               boxStyle={{
                 borderTopLeftRadius: 0,
@@ -65,15 +65,15 @@ const FormularioFisico = () => {
                 paddingLeft: 18,
               }}
               textStyle={{
-                fontFamily: "KodChasanMedium",
+                fontFamily: 'KodChasanMedium',
                 fontSize: 14,
               }}
               data={nivelAtividadeDados}
               selectedBtn={(value) => setNivelAtividade(value.value)}
               activeColor={Colors.vermelhoBase}
               textColor={Colors.brancoBase}
-              boxActiveBgColor={"transparent"}
-              boxDeactiveBgColor={"transparent"}
+              boxActiveBgColor={'transparent'}
+              boxDeactiveBgColor={'transparent'}
             />
           </View>
         </View>
@@ -116,33 +116,33 @@ const styles = StyleSheet.create({
   tituloPagina: {
     marginLeft: 135,
     color: Colors.brancoBase,
-    fontFamily: "KodChasanBold",
+    fontFamily: 'KodChasanBold',
     fontSize: 20,
   },
   containerNivelAtividade: {
-    flexDirection: "column",
+    flexDirection: 'column',
     paddingTop: 40,
   },
   containerGordura: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     gap: 55,
     paddingTop: 80,
   },
   botao: {
     paddingTop: 1,
-    alignSelf: "flex-end",
+    alignSelf: 'flex-end',
     paddingTop: 570,
-    position: "absolute",
+    position: 'absolute',
     paddingRight: 7,
   },
 
   containerCaloriasDiarias: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     paddingTop: 80,
     paddingBottom: 150,
-    justifyContent: "space-between",
+    justifyContent: 'space-between',
   },
   inputMaior: {
     height: 20,
@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: Colors.brancoBase,
     borderBottomLeftRadius: 24,
-    alignItems: "center",
+    alignItems: 'center',
     paddingLeft: 18,
     paddingBottom: 4,
     fontSize: 16,
@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: Colors.brancoBase,
     borderBottomLeftRadius: 24,
-    alignItems: "center",
+    alignItems: 'center',
     paddingLeft: 18,
     paddingBottom: 4,
     fontSize: 16,
@@ -171,10 +171,10 @@ const styles = StyleSheet.create({
   label: {
     color: Colors.brancoBase,
     fontSize: 16,
-    fontFamily: "KodChasanMedium",
+    fontFamily: 'KodChasanMedium',
   },
   radioInput: {
-    flexDirection: "row",
+    flexDirection: 'row',
     width: 12,
     activeColor: Colors.verdeBase,
   },

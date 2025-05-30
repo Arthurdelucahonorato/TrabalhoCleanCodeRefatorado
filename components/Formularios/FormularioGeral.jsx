@@ -1,37 +1,22 @@
-import React, { useState, useEffect } from "react";
-import { TextInput, View, Text, StyleSheet } from "react-native";
-import RadioButtonRN from "radio-buttons-react-native";
-import Colors from "../../constants/Colors";
-import Botoes from "../Botoes";
-import { useRouter } from "expo-router";
+import { useRouter } from 'expo-router';
+import RadioButtonRN from 'radio-buttons-react-native';
+import { useEffect, useState } from 'react';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
+import Colors from '../../constants/Colors';
 import {
-  Bid,
-  Bnome,
-  Bidade,
   Baltura,
-  Bpeso,
   Bgenero,
-  Bnivel_de_atividade,
-  Bgordura,
-  Bcalorias,
-  Bhistorico_medico,
-  Bintolerancias,
-  Bexcluir_alimentos,
-  BsetId,
-  BsetNome,
-  BsetIdade,
+  Bidade,
+  Bnome,
+  Bpeso,
   BsetAltura,
-  BsetPeso,
   BsetGenero,
-  BsetNivelDeAtividade,
-  BsetGordura,
-  BsetCalorias,
-  BsetHistoricoMedico,
-  BsetIntolerancias,
-  BsetExcluirAlimentos,
-  carregarDadosDoUsuario,
+  BsetIdade,
+  BsetNome,
+  BsetPeso,
   inserirOuAtualizarUsuario,
-} from "../../database/variaveis";
+} from '../../database/variaveis';
+import Botoes from '../Botoes';
 
 const FormularioGeral = () => {
   const router = useRouter();
@@ -46,8 +31,8 @@ const FormularioGeral = () => {
   }, []);
 
   const generoEscolha = [
-    { label: "Masculino", value: "Masculino" },
-    { label: "Feminino", value: "Feminino" },
+    { label: 'Masculino', value: 'Masculino' },
+    { label: 'Feminino', value: 'Feminino' },
   ];
 
   const handleSubmit = () => {
@@ -59,7 +44,7 @@ const FormularioGeral = () => {
 
     inserirOuAtualizarUsuario();
 
-    router.push(`/PerfilUsuario/Fisico`);
+    router.push('/PerfilUsuario/Fisico');
   };
 
   return (
@@ -90,7 +75,7 @@ const FormularioGeral = () => {
         <View style={styles.containerAlturaPeso}>
           <View
             style={{
-              flexDirection: "row",
+              flexDirection: 'row',
               gap: 25,
             }}
           >
@@ -107,7 +92,7 @@ const FormularioGeral = () => {
           </View>
           <View
             style={{
-              flexDirection: "row",
+              flexDirection: 'row',
               gap: 25,
             }}
           >
@@ -129,10 +114,10 @@ const FormularioGeral = () => {
             <RadioButtonRN
               circleSize={14}
               style={{
-                flexDirection: "row",
-                justifyContent: "space-between",
+                flexDirection: 'row',
+                justifyContent: 'space-between',
                 paddingTop: 12,
-                alignItems: "center",
+                alignItems: 'center',
               }}
               boxStyle={{
                 borderTopLeftRadius: 0,
@@ -144,15 +129,15 @@ const FormularioGeral = () => {
                 paddingLeft: 18,
               }}
               textStyle={{
-                fontFamily: "KodChasanMedium",
+                fontFamily: 'KodChasanMedium',
                 fontSize: 14,
               }}
               data={generoEscolha}
               selectedBtn={(value) => setGenero(value.value)}
               activeColor={Colors.vermelhoBase}
               textColor={Colors.brancoBase}
-              boxActiveBgColor={"transparent"}
-              boxDeactiveBgColor={"transparent"}
+              boxActiveBgColor={'transparent'}
+              boxDeactiveBgColor={'transparent'}
             />
           </View>
         </View>
@@ -160,7 +145,7 @@ const FormularioGeral = () => {
       <View style={styles.botao}>
         <Botoes
           texto="Próximo"
-          urlAnterior={"GuiaAlimentar"}
+          urlAnterior={'GuiaAlimentar'}
           ativo={true}
           submit={handleSubmit}
         />
@@ -177,28 +162,28 @@ const styles = StyleSheet.create({
     marginLeft: 65,
     paddingTop: 60,
     color: Colors.brancoBase,
-    fontFamily: "KodChasanBold",
+    fontFamily: 'KodChasanBold',
     fontSize: 20,
   },
   containerNome: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     gap: 100,
     paddingTop: 50,
   },
   containerIdade: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     gap: 100,
     paddingTop: 40,
   },
   containerAlturaPeso: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     paddingTop: 40,
   },
   containerGenero: {
-    flexDirection: "column",
+    flexDirection: 'column',
     paddingTop: 40,
   },
   inputMaior: {
@@ -208,16 +193,16 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: Colors.brancoBase,
     borderBottomLeftRadius: 24,
-    alignItems: "center",
+    alignItems: 'center',
     paddingLeft: 18,
     paddingBottom: 4,
     fontSize: 16,
   },
   botao: {
     paddingTop: 1,
-    alignSelf: "flex-end",
+    alignSelf: 'flex-end',
     paddingTop: 660,
-    position: "absolute",
+    position: 'absolute',
   },
   inputMenor: {
     height: 20,
@@ -226,7 +211,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: Colors.brancoBase,
     borderBottomLeftRadius: 24,
-    alignItems: "center",
+    alignItems: 'center',
     paddingLeft: 18,
     paddingBottom: 4,
     fontSize: 16,
@@ -234,10 +219,10 @@ const styles = StyleSheet.create({
   label: {
     color: Colors.brancoBase,
     fontSize: 16,
-    fontFamily: "KodChasanMedium",
+    fontFamily: 'KodChasanMedium',
   },
   radioInput: {
-    flexDirection: "row",
+    flexDirection: 'row',
     width: 12,
     activeColor: Colors.verdeBase,
   },

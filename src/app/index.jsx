@@ -1,11 +1,11 @@
-import { View, Text, StyleSheet } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
-import React, { useEffect } from "react";
-import Header from "../../components/Header";
-import Botoes from "../../components/Botoes";
-import Colors from "../../constants/Colors";
+import { LinearGradient } from 'expo-linear-gradient';
+import { useRouter } from 'expo-router';
+import { useEffect } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import Botoes from '../../components/Botoes';
+import Header from '../../components/Header';
+import Colors from '../../constants/Colors';
 import { createTable, lista } from '../../database/database';
-import { useRouter } from "expo-router";
 import {
   Bnome,
 } from '../../database/variaveis';
@@ -20,10 +20,10 @@ const BoasVindas = () => {
 
 
   const handleSubmit = () => {
-    if (Bnome != "") {
-      router.push(`/GuiaAlimentar`);
+    if (Bnome != '') {
+      router.push('/GuiaAlimentar');
     } else {
-      router.push(`/PerfilUsuario`)
+      router.push('/PerfilUsuario');
     }
   };
 
@@ -54,47 +54,47 @@ const BoasVindas = () => {
 const styles = StyleSheet.create({
   containerGlobal: {
     flex: 1,
-    alignItems: "center",
+    alignItems: 'center',
   },
   container: {
     flex: 1,
-    width: "80%",
-    justifyContent: "center",
-    alignItems: "center",
+    width: '80%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   areaTexto: {
-    alignItems: "center",
-    justifyContent: "center",
-    width: "100%",
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
     marginTop: 100,
   },
   titulo1: {
     color: Colors.brancoBase,
     fontSize: 16,
-    fontFamily: "KodChasanRegular",
+    fontFamily: 'KodChasanRegular',
   },
   titulo2: {
     color: Colors.vermelhoBase,
     fontSize: 20,
     marginBottom: 30,
-    fontFamily: "KodChasanRegular",
+    fontFamily: 'KodChasanRegular',
   },
   subtitulo1: {
     color: Colors.brancoBase,
     fontSize: 16,
-    textAlign: "center",
-    fontFamily: "KodChasanRegular",
+    textAlign: 'center',
+    fontFamily: 'KodChasanRegular',
   },
   subtitulo2: {
     color: Colors.brancoBase,
     fontSize: 16,
-    textAlign: "center",
+    textAlign: 'center',
     marginBottom: 70,
-    fontFamily: "KodChasanRegular",
+    fontFamily: 'KodChasanRegular',
   },
   botao: {
-    alignSelf: "flex-end",
-    position: "absolute",
+    alignSelf: 'flex-end',
+    position: 'absolute',
     bottom: 120,
     right: 20,
   },

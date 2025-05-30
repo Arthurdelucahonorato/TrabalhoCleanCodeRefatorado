@@ -16,7 +16,7 @@ const Layout = () => {
         name="ListaCompras"
         options={{
           tabBarLabel: '',
-          tabBarIcon: ({ }) => (
+          tabBarIcon: () => (
             <Ionicons
               style={{ marginTop: 9 }}
               name="list"
@@ -30,7 +30,7 @@ const Layout = () => {
         name="GuiaAlimentar"
         options={{
           tabBarLabel: '',
-          tabBarIcon: ({ }) => (
+          tabBarIcon: () => (
             <Ionicons
               style={{ marginTop: 9 }}
               name="calendar-outline"
@@ -44,7 +44,7 @@ const Layout = () => {
         name="PerfilUsuario"
         options={{
           tabBarLabel: '',
-          tabBarIcon: ({ }) => (
+          tabBarIcon: () => (
             <Ionicons
               style={{ marginTop: 9 }}
               name="person"

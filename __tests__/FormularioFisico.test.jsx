@@ -10,7 +10,7 @@ jest.mock('expo-router', () => ({
 jest.mock('radio-buttons-react-native', () => {
   const { View, Text, TouchableOpacity } = require('react-native');
   
-  return ({ data, selectedBtn }) => {
+  const MockRadioButton = ({ data, selectedBtn }) => {
     return (
       <View testID="radio-button-group">
         {data.map((item, index) => (
@@ -25,6 +25,8 @@ jest.mock('radio-buttons-react-native', () => {
       </View>
     );
   };
+  MockRadioButton.displayName = 'MockRadioButton';
+  return MockRadioButton;
 });
 
 jest.mock('../database/variaveis', () => ({
@@ -49,11 +51,13 @@ jest.mock('../constants/Colors', () => ({
 jest.mock('../components/Botoes', () => {
   const { TouchableOpacity, Text } = require('react-native');
   
-  return ({ texto, submit }) => (
+  const MockBotoes = ({ texto, submit }) => (
     <TouchableOpacity testID="botao-component" onPress={submit}>
       <Text testID="botao-texto">{texto}</Text>
     </TouchableOpacity>
   );
+  MockBotoes.displayName = 'MockBotoes';
+  return MockBotoes;
 });
 
 const FormularioFisico = require('../components/Formularios/FormularioFisico').default;

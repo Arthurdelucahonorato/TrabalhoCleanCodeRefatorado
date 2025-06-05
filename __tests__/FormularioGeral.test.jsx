@@ -17,7 +17,7 @@ jest.mock('../database/variaveis', () => ({
 
 jest.mock('radio-buttons-react-native', () => {
   const React = require('react');
-  const MockRadioButton = ({ data, selectedBtn, children }) => {
+  const MockRadioButton = ({ data, selectedBtn, _children }) => {
     return React.createElement('div', {
       'data-testid': 'radio-button-group',
     }, data.map((item, index) => 

@@ -24,14 +24,14 @@ jest.mock('react-native-snap-carousel', () => {
 });
 
 jest.mock('react-native-paper', () => ({
-  Checkbox: ({ status, onPress, children }) => {
+  Checkbox: function MockCheckbox({ status, onPress, _children }) {
     const React = require('react');
     return React.createElement('button', { 
       onPress: onPress,
       testID: `checkbox-${status}`,
       'data-testid': `checkbox-${status}`,
       'aria-checked': status === 'checked',
-    }, children);
+    }, _children);
   },
 }));
 

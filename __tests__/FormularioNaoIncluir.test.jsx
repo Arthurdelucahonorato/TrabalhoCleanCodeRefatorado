@@ -25,11 +25,15 @@ jest.mock('../constants/Colors', () => ({
 jest.mock('../components/Botoes', () => {
   const { TouchableOpacity, Text } = require('react-native');
   
-  return ({ texto, submit }) => (
+  const MockedBotoes = ({ texto, submit }) => (
     <TouchableOpacity testID="botao-component" onPress={submit}>
       <Text testID="botao-texto">{texto}</Text>
     </TouchableOpacity>
   );
+  
+  MockedBotoes.displayName = 'MockedBotoes';
+  
+  return MockedBotoes;
 });
 
 const FormularioNaoIncluir = require('../components/Formularios/FormularioNaoIncluir').default;

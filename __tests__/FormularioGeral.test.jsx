@@ -46,7 +46,7 @@ describe('Componente FormularioGeral', () => {
   });
 
   test('deve exibir todos os campos do formulário', () => {
-    const { getByDisplayValue, getByText } = render(<FormularioGeral />);
+    const { getByText } = render(<FormularioGeral />);
     
     expect(getByText('Nome')).toBeTruthy();
     expect(getByText('Idade')).toBeTruthy();

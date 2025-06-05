@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1749080407954" clover="3.2.0">
-  <project timestamp="1749080407954" name="All files">
-    <metrics statements="119" coveredstatements="58" conditionals="14" coveredconditionals="13" methods="30" coveredmethods="15" elements="163" coveredelements="86" complexity="0" loc="119" ncloc="119" packages="3" files="10" classes="10"/>
+<coverage generated="1749087283155" clover="3.2.0">
+  <project timestamp="1749087283155" name="All files">
+    <metrics statements="119" coveredstatements="82" conditionals="14" coveredconditionals="13" methods="30" coveredmethods="20" elements="163" coveredelements="115" complexity="0" loc="119" ncloc="119" packages="3" files="10" classes="10"/>
     <package name="components">
       <metrics statements="41" coveredstatements="38" conditionals="14" coveredconditionals="13" methods="12" coveredmethods="12"/>
-      <file name="Botoes.jsx" path="C:\Users\6128023\OneDrive - Thomson Reuters Incorporated\Documentos\Programação\TrabalhoCleanCodeRefatorado\components\Botoes.jsx">
+      <file name="Botoes.jsx" path="C:\Users\Diego\OneDrive\Documentos\Programacao\Satc\CleanCode\TrabalhoCleanCodeRefatorado\components\Botoes.jsx">
         <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
         <line num="5" count="2" type="stmt"/>
         <line num="6" count="26" type="stmt"/>
@@ -13,7 +13,7 @@
         <line num="16" count="1" type="stmt"/>
         <line num="32" count="2" type="stmt"/>
       </file>
-      <file name="Cards.jsx" path="C:\Users\6128023\OneDrive - Thomson Reuters Incorporated\Documentos\Programação\TrabalhoCleanCodeRefatorado\components\Cards.jsx">
+      <file name="Cards.jsx" path="C:\Users\Diego\OneDrive\Documentos\Programacao\Satc\CleanCode\TrabalhoCleanCodeRefatorado\components\Cards.jsx">
         <metrics statements="29" coveredstatements="26" conditionals="8" coveredconditionals="7" methods="8" coveredmethods="8"/>
         <line num="12" count="1" type="stmt"/>
         <line num="13" count="28" type="stmt"/>
@@ -45,13 +45,13 @@
         <line num="72" count="27" type="stmt"/>
         <line num="87" count="1" type="stmt"/>
       </file>
-      <file name="Header.jsx" path="C:\Users\6128023\OneDrive - Thomson Reuters Incorporated\Documentos\Programação\TrabalhoCleanCodeRefatorado\components\Header.jsx">
+      <file name="Header.jsx" path="C:\Users\Diego\OneDrive\Documentos\Programacao\Satc\CleanCode\TrabalhoCleanCodeRefatorado\components\Header.jsx">
         <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="8" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
       </file>
-      <file name="JanelaAtual.jsx" path="C:\Users\6128023\OneDrive - Thomson Reuters Incorporated\Documentos\Programação\TrabalhoCleanCodeRefatorado\components\JanelaAtual.jsx">
+      <file name="JanelaAtual.jsx" path="C:\Users\Diego\OneDrive\Documentos\Programacao\Satc\CleanCode\TrabalhoCleanCodeRefatorado\components\JanelaAtual.jsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="9" type="stmt"/>
@@ -59,28 +59,28 @@
       </file>
     </package>
     <package name="components.Formularios">
-      <metrics statements="71" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="17" coveredmethods="3"/>
-      <file name="FormularioFisico.jsx" path="C:\Users\6128023\OneDrive - Thomson Reuters Incorporated\Documentos\Programação\TrabalhoCleanCodeRefatorado\components\Formularios\FormularioFisico.jsx">
-        <metrics statements="17" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
-        <line num="37" count="0" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
-        <line num="72" count="0" type="stmt"/>
-        <line num="113" count="0" type="stmt"/>
+      <metrics statements="71" coveredstatements="37" conditionals="0" coveredconditionals="0" methods="17" coveredmethods="7"/>
+      <file name="FormularioFisico.jsx" path="C:\Users\Diego\OneDrive\Documentos\Programacao\Satc\CleanCode\TrabalhoCleanCodeRefatorado\components\Formularios\FormularioFisico.jsx">
+        <metrics statements="17" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="14" type="stmt"/>
+        <line num="19" count="14" type="stmt"/>
+        <line num="20" count="14" type="stmt"/>
+        <line num="21" count="14" type="stmt"/>
+        <line num="23" count="14" type="stmt"/>
+        <line num="24" count="12" type="stmt"/>
+        <line num="27" count="14" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="37" count="14" type="stmt"/>
+        <line num="43" count="14" type="stmt"/>
+        <line num="72" count="3" type="stmt"/>
+        <line num="113" count="1" type="stmt"/>
       </file>
-      <file name="FormularioGeral.jsx" path="C:\Users\6128023\OneDrive - Thomson Reuters Incorporated\Documentos\Programação\TrabalhoCleanCodeRefatorado\components\Formularios\FormularioGeral.jsx">
+      <file name="FormularioGeral.jsx" path="C:\Users\Diego\OneDrive\Documentos\Programacao\Satc\CleanCode\TrabalhoCleanCodeRefatorado\components\Formularios\FormularioGeral.jsx">
         <metrics statements="21" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
         <line num="21" count="1" type="stmt"/>
         <line num="22" count="20" type="stmt"/>
@@ -104,7 +104,7 @@
         <line num="136" count="0" type="stmt"/>
         <line num="157" count="1" type="stmt"/>
       </file>
-      <file name="FormularioHistorico.jsx" path="C:\Users\6128023\OneDrive - Thomson Reuters Incorporated\Documentos\Programação\TrabalhoCleanCodeRefatorado\components\Formularios\FormularioHistorico.jsx">
+      <file name="FormularioHistorico.jsx" path="C:\Users\Diego\OneDrive\Documentos\Programacao\Satc\CleanCode\TrabalhoCleanCodeRefatorado\components\Formularios\FormularioHistorico.jsx">
         <metrics statements="11" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
         <line num="12" count="0" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
@@ -118,7 +118,7 @@
         <line num="28" count="0" type="stmt"/>
         <line num="71" count="0" type="stmt"/>
       </file>
-      <file name="FormularioNaoIncluir.jsx" path="C:\Users\6128023\OneDrive - Thomson Reuters Incorporated\Documentos\Programação\TrabalhoCleanCodeRefatorado\components\Formularios\FormularioNaoIncluir.jsx">
+      <file name="FormularioNaoIncluir.jsx" path="C:\Users\Diego\OneDrive\Documentos\Programacao\Satc\CleanCode\TrabalhoCleanCodeRefatorado\components\Formularios\FormularioNaoIncluir.jsx">
         <metrics statements="11" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
         <line num="12" count="0" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
@@ -132,7 +132,7 @@
         <line num="27" count="0" type="stmt"/>
         <line num="54" count="0" type="stmt"/>
       </file>
-      <file name="FormularioProblemasAlimentares.jsx" path="C:\Users\6128023\OneDrive - Thomson Reuters Incorporated\Documentos\Programação\TrabalhoCleanCodeRefatorado\components\Formularios\FormularioProblemasAlimentares.jsx">
+      <file name="FormularioProblemasAlimentares.jsx" path="C:\Users\Diego\OneDrive\Documentos\Programacao\Satc\CleanCode\TrabalhoCleanCodeRefatorado\components\Formularios\FormularioProblemasAlimentares.jsx">
         <metrics statements="11" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
         <line num="12" count="0" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
@@ -148,16 +148,16 @@
       </file>
     </package>
     <package name="components.requisicaoGPT">
-      <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="ChamaApi.jsx" path="C:\Users\6128023\OneDrive - Thomson Reuters Incorporated\Documentos\Programação\TrabalhoCleanCodeRefatorado\components\requisicaoGPT\ChamaApi.jsx">
-        <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="ChamaApi.jsx" path="C:\Users\Diego\OneDrive\Documentos\Programacao\Satc\CleanCode\TrabalhoCleanCodeRefatorado\components\requisicaoGPT\ChamaApi.jsx">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="16" type="stmt"/>
+        <line num="3" count="16" type="stmt"/>
+        <line num="23" count="15" type="stmt"/>
+        <line num="24" count="14" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
       </file>
     </package>
   </project>

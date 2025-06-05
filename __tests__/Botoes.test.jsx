@@ -1,8 +1,6 @@
-import React from 'react';
-import { render, fireEvent } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 import Botoes from '../components/Botoes';
 
-// Mock do Colors
 jest.mock('../constants/Colors', () => ({
   verdeBase: '#4CAF50',
   brancoBase: '#FFFFFF',

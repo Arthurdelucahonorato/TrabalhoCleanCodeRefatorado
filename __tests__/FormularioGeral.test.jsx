@@ -1,5 +1,4 @@
-import React from 'react';
-import { render, fireEvent, waitFor } from '@testing-library/react-native';
+import { fireEvent, render, waitFor } from '@testing-library/react-native';
 import FormularioGeral from '../components/Formularios/FormularioGeral';
 
 jest.mock('../database/variaveis', () => ({
@@ -25,6 +24,7 @@ jest.mock('radio-buttons-react-native', () => {
       React.createElement('button', {
         key: index,
         'data-testid': `radio-${item.value}`,
+        onPress: () => selectedBtn(item),
         onClick: () => selectedBtn(item),
       }, item.label),
     ));
@@ -166,4 +166,14 @@ describe('Componente FormularioGeral', () => {
     expect(getByText('Próximo')).toBeTruthy();
     expect(getByText('Voltar')).toBeTruthy();
   });
+
+  test('deve aceitar entrada vazia nos campos', () => {
+    const { getByDisplayValue } = render(<FormularioGeral />);
+    const inputNome = getByDisplayValue('João Silva');
+    
+    fireEvent.changeText(inputNome, '');
+    
+    expect(inputNome.props.value).toBe('');
+  });
+
 });

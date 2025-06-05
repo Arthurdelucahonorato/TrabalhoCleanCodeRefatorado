@@ -1,5 +1,4 @@
-import React from 'react';
-import { render, fireEvent, waitFor } from '@testing-library/react-native';
+import { fireEvent, render, waitFor } from '@testing-library/react-native';
 import Cards from '../components/Cards';
 
 jest.mock('../database/buscaRefeicoes', () => ({
@@ -140,5 +139,55 @@ describe('Componente Cards', () => {
     
     const { root } = render(<Cards />);
     expect(root).toBeTruthy();
+  });
+
+  test('deve chamar dropRefeicoes e navegar quando todas as refeições estão marcadas', async () => {
+    const mockPush = jest.fn();
+    jest.doMock('expo-router', () => ({
+      useRouter: () => ({ push: mockPush }),
+    }));
+
+    const todasMarcadas = [
+      { ID: 1, texto: 'Café da manhã: Pão integral', status: '1' },
+      { ID: 2, texto: 'Almoço: Arroz e feijão', status: '1' },
+      { ID: 3, texto: 'Jantar: Salada verde', status: '1' },
+    ];
+
+    buscaRefeicoes.mockResolvedValue(todasMarcadas);
+    console.log = jest.fn();
+    
+    const { getAllByTestId } = render(<Cards />);
+    
+    await waitFor(() => {
+      const checkboxes = getAllByTestId(/checkbox-/);
+      fireEvent.press(checkboxes[0]);
+    });
+
+    await waitFor(() => {
+      expect(console.log).toHaveBeenCalledWith(true);
+      expect(dropRefeicoes).toHaveBeenCalled();
+    });
+  });
+
+  test('deve logar false quando nem todas as refeições estão marcadas', async () => {
+    const parcialmenteMarcadas = [
+      { ID: 1, texto: 'Café da manhã: Pão integral', status: '1' },
+      { ID: 2, texto: 'Almoço: Arroz e feijão', status: '0' },
+      { ID: 3, texto: 'Jantar: Salada verde', status: '1' },
+    ];
+
+    buscaRefeicoes.mockResolvedValue(parcialmenteMarcadas);
+    console.log = jest.fn();
+    
+    const { getAllByTestId } = render(<Cards />);
+    
+    await waitFor(() => {
+      const checkboxes = getAllByTestId(/checkbox-/);
+      fireEvent.press(checkboxes[0]);
+    });
+
+    await waitFor(() => {
+      expect(console.log).toHaveBeenCalledWith(false);
+    });
   });
 });

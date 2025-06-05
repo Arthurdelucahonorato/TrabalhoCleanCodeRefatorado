@@ -1,6 +1,5 @@
 import { fetchChatGPTResponse } from '../components/requisicaoGPT/ChamaApi';
 
-// Mock do fetch global
 global.fetch = jest.fn();
 
 describe('ChamaApi', () => {
@@ -104,7 +103,6 @@ describe('ChamaApi', () => {
       const networkError = new Error('Network error');
       fetch.mockRejectedValueOnce(networkError);
 
-      // Mock do console.error para evitar logs durante os testes
       const consoleSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
 
       await expect(fetchChatGPTResponse(mockApiKey, mockPrompt, mockTokens))

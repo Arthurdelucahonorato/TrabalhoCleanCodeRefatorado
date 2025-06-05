@@ -1,5 +1,4 @@
-import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 
 const mockPush = jest.fn();
 jest.mock('expo-router', () => ({
@@ -9,7 +8,6 @@ jest.mock('expo-router', () => ({
 }));
 
 jest.mock('radio-buttons-react-native', () => {
-  const React = require('react');
   const { View, Text, TouchableOpacity } = require('react-native');
   
   return ({ data, selectedBtn }) => {
@@ -49,7 +47,6 @@ jest.mock('../constants/Colors', () => ({
 }));
 
 jest.mock('../components/Botoes', () => {
-  const React = require('react');
   const { TouchableOpacity, Text } = require('react-native');
   
   return ({ texto, submit }) => (

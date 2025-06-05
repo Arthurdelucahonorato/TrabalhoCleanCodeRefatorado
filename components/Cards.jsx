@@ -12,7 +12,7 @@ import { updateRefeicoes } from '../database/updateRefeicoes';
 const Cards = () => {
   const router = useRouter();
   const [refeicoes, setRefeicoes] = useState();
-  const [setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   const fetchData = async () => {
     try {

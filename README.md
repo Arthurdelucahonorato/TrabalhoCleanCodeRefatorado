@@ -203,3 +203,4 @@ WARN Require cycle: database\variaveis.jsx -> database\database.jsx
 
 - [CHANGELOG.md](./CHANGELOG.md) - Histórico de mudanças e refatorações
 - [IntefaceFluente](./docs/InterfaceFluente.md) - Explicação detalhada sobre a aplicação de interfaces fluentes
+- [AnáliseDaArquitetura](./docs/analise-arquitetura.md) - Explicação sobre arquitetura do projeto

@@ -12,6 +12,7 @@ import {
   BsetNivelDeAtividade,
   inserirOuAtualizarUsuario,
 } from '../../database/variaveis';
+import UserDataBuilder from '../../database/UserDataBuilder';
 import Botoes from '../Botoes';
 
 const FormularioFisico = () => {
@@ -24,14 +25,25 @@ const FormularioFisico = () => {
     inserirOuAtualizarUsuario();
   }, []);
 
-  const handleSubmit = () => {
-    BsetNivelDeAtividade(nivelAtividade);
-    BsetGordura(gordura);
-    BsetCalorias(caloriasDiarias);
+  const handleSubmit = async () => {
+    try {
+      await new UserDataBuilder()
+        .withDadosFisicos({
+          nivelDeAtividade: nivelAtividade,
+          gordura,
+          calorias: caloriasDiarias,
+        })
+        .build();
 
-    inserirOuAtualizarUsuario();
-
-    router.push('PerfilUsuario/Historico');
+      router.push('PerfilUsuario/Historico');
+    } catch (error) {
+      console.error('Erro ao salvar dados físicos:', error);
+      BsetNivelDeAtividade(nivelAtividade);
+      BsetGordura(gordura);
+      BsetCalorias(caloriasDiarias);
+      inserirOuAtualizarUsuario();
+      router.push('PerfilUsuario/Historico');
+    }
   };
 
   const nivelAtividadeDados = [

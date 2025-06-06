@@ -6,7 +6,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { ActivityIndicator } from 'react-native-paper';
 import Botoes from '../../../../components/Botoes';
 import Header from '../../../../components/Header';
-import { fetchChatGPTResponse } from '../../../../components/requisicaoGPT/ChamaApi';
+import { fetchChatGPTResponseFluent } from '../../../../components/requisicaoGPT/ChamaApi';
 import Colors from '../../../../constants/Colors';
 import { refeicoes } from '../../../../database/database';
 import { inserirLista } from '../../../../database/insertLista';
@@ -59,7 +59,7 @@ const GerarGuia = () => {
 
       const respostas = await Promise.all(
         Array.from({ length: 7 }).map(() =>
-          fetchChatGPTResponse(key, prompt1, 200),
+          fetchChatGPTResponseFluent(key, prompt1, 200),
         ),
       );
 
@@ -71,7 +71,7 @@ const GerarGuia = () => {
 
 
       console.log(novasRefeicoes);
-      const data2 = await fetchChatGPTResponse(key, prompt2, 1000);
+      const data2 = await fetchChatGPTResponseFluent(key, prompt2, 1000);
 
       console.log('Inserindo na tabela lista ...');
       await inserirLista(data2.choices[0].message.content);

@@ -16,6 +16,7 @@ import {
   BsetPeso,
   inserirOuAtualizarUsuario,
 } from '../../database/variaveis';
+import UserDataBuilder from '../../database/UserDataBuilder';
 import Botoes from '../Botoes';
 
 const FormularioGeral = () => {
@@ -35,17 +36,31 @@ const FormularioGeral = () => {
     { label: 'Feminino', value: 'Feminino' },
   ];
 
-  const handleSubmit = () => {
-    BsetNome(nome);
-    BsetIdade(idade);
-    BsetAltura(altura);
-    BsetPeso(peso);
-    BsetGenero(genero);
+  const handleSubmit = async () => {
+    try {
+      await new UserDataBuilder()
+        .withDadosBasicos({
+          nome,
+          idade,
+          altura,
+          peso,
+          genero,
+        })
+        .build();
 
-    inserirOuAtualizarUsuario();
-
-    router.push('/PerfilUsuario/Fisico');
+      router.push('/PerfilUsuario/Fisico');
+    } catch (error) {
+      console.error('Erro ao salvar dados:', error);
+      BsetNome(nome);
+      BsetIdade(idade);
+      BsetAltura(altura);
+      BsetPeso(peso);
+      BsetGenero(genero);
+      inserirOuAtualizarUsuario();
+      router.push('/PerfilUsuario/Fisico');
+    }
   };
+
 
   return (
     <View style={styles.container}>

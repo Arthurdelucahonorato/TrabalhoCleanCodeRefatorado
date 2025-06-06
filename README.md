@@ -36,7 +36,16 @@ npm install
 npm start
 ```
 
-### 5. Abra no VS Code (opcional)
+### 5. Abra no emulador Android (recomendado)
+
+Após executar `npm start`, pressione **'A'** no terminal para abrir automaticamente no emulador do Android Studio.
+
+**Pré-requisitos:**
+- Android Studio instalado
+- Emulador Android configurado e em execução
+- Expo Go instalado no emulador (opcional)
+
+### 6. Abra no VS Code (opcional)
 
 ```bash
 code .
@@ -46,7 +55,9 @@ code .
 
 ### Desenvolvimento
 - **`npm start`**: Inicia o servidor de desenvolvimento Expo
+- **`npm run start:clean`**: Inicia com cache limpo (recomendado para warnings)
 - **`npm run android`**: Executa no emulador Android
+- **`npm run android:clean`**: Executa no Android com cache limpo
 - **`npm run ios`**: Executa no simulador iOS
 - **`npm run web`**: Executa no navegador web
 
@@ -153,6 +164,52 @@ O projeto utiliza:
 - ✅ **Refatoração segura** - Permite mudanças com confiança
 - ✅ **Documentação viva** - Testes servem como documentação
 - ✅ **CI/CD integrado** - Execução automática no GitHub Actions
+
+## ⚠️ Problemas Conhecidos e Soluções
+
+### Avisos Durante Execução
+
+Durante a execução do projeto (`npm start` + tecla 'A'), alguns avisos podem aparecer:
+
+#### 1. **ViewPropTypes Deprecated**
+```
+ERROR ViewPropTypes will be removed from React Native
+```
+**Status**: ✅ **Suprimido** - App funciona normalmente
+**Causa**: Expo Router usando ViewPropTypes deprecated
+**Solução**: Configurado `metro.config.js` para filtrar warnings não críticos
+
+#### 2. **Node.js Deprecation Warnings**
+```
+DeprecationWarning: The `punycode` module is deprecated
+DeprecationWarning: The `util.isArray` API is deprecated
+```
+**Status**: ✅ **Suprimido** - Warnings do sistema
+**Causa**: Dependências internas do Expo/Metro bundler
+**Solução**: Filtrados automaticamente pelo Metro config
+
+### 🔧 Supressão de Warnings
+
+Para uma experiência de desenvolvimento mais limpa, implementamos filtros automáticos:
+
+- **Warnings suprimidos**: ViewPropTypes, punycode, util.isArray
+- **Warnings preservados**: Erros críticos, problemas de código
+- **Scripts disponíveis**: `npm run start:clean` e `npm run android:clean`
+- **Configuração**: `metro.config.js` com filtros específicos
+
+#### 3. **Require Cycle Warning**
+```
+WARN Require cycle: database\variaveis.jsx -> database\database.jsx
+```
+**Status**: Resolvido
+**Solução**: Refatorado dependências circulares entre arquivos do banco
+
+### Compatibilidade
+
+- ✅ **Android**: Testado no emulador Android Studio
+- ✅ **Expo Go**: Funciona corretamente
+- ✅ **Metro Bundler**: Build bem-sucedido
+- ✅ **Funcionalidades**: Todas operacionais
 
 ## 📚 Documentação Adicional
 

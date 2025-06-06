@@ -1,7 +1,5 @@
-import * as SQLite from 'expo-sqlite';
+import { db } from './config';
 import { carregarDadosDoUsuario, inserirOuAtualizarUsuario } from './variaveis';
-
-const db = SQLite.openDatabase('infos.db');
 
 const createTable = () => {
   db.transaction(tx => {

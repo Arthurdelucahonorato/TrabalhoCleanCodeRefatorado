@@ -1,4 +1,4 @@
-import { db } from './database';
+import { db } from './config';
 
 let Bid = 1;
 let Bnome = '';

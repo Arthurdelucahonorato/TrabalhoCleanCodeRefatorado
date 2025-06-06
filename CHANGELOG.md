@@ -135,4 +135,59 @@ Componentes importados mas não usados em quase todos os arquivos:
 - **Exemplos práticos**: Casos de uso reais documentados
 - **API Reference**: Documentação completa de todos os métodos
 
+## 🏗️ Correções de Arquitetura e Dependências
+
+### Objetivos Alcançados
+- ✅ **Eliminação de dependência circular** entre módulos de banco de dados
+- ✅ **Resolução de conflitos de navegação** com nomes duplicados
+- ✅ **Correção de testes falhando** após mudanças estruturais
+- ✅ **Configuração otimizada** do Jest
+- ✅ **Arquitetura mais limpa** seguindo princípios de Clean Code
+
+### Problemas Corrigidos
+
+#### Dependência Circular de Banco de Dados
+- **Problema**: Ciclo de dependência entre `database/variaveis.jsx` ↔ `database/database.jsx`
+- **Warning**: "Require cycle: database/variaveis.jsx -> database/database.jsx -> database/variaveis.jsx"
+- **Solução**: Criado `database/config.jsx` como fonte única da instância SQLite
+- **Benefício**: Separação clara de responsabilidades e eliminação de acoplamento circular
+
+#### Conflito de Navegação
+- **Problema**: Telas com nomes duplicados causando warning: "(tabs) > GuiaAlimentar, (tabs) > GuiaAlimentar > GuiaAlimentar"
+- **Solução**: Renomeado `GuiaAlimentar.jsx` para `GuiaAlimentarHome.jsx`
+- **Atualização**: Stack.Screen name corrigido em `_layout.jsx`
+- **Benefício**: Navegação limpa sem conflitos de nomenclatura
+
+### Arquivos Modificados
+
+#### Novos Arquivos
+- `database/config.jsx` - Configuração centralizada do banco de dados
+
+#### Arquivos Atualizados
+- `database/database.jsx` - Importação atualizada para usar config centralizado
+- `database/variaveis.jsx` - Importação atualizada para usar config centralizado
+- `src/app/(tabs)/GuiaAlimentar/GuiaAlimentar.jsx` → `GuiaAlimentarHome.jsx` (renomeado)
+- `src/app/(tabs)/GuiaAlimentar/_layout.jsx` - Referência de tela atualizada
+- `__tests__/variaveis.test.jsx` - Mock e importações corrigidos
+- `jest.config.js` - Configuração otimizada para expo-sqlite
+- `jest.setup.js` - Mock adicionado para expo-sqlite
+
+### Melhorias de Arquitetura
+
+#### Separação de Responsabilidades
+- **Config**: `database/config.jsx` - Apenas configuração do banco
+- **Schema**: `database/database.jsx` - Criação de tabelas e estrutura
+- **State**: `database/variaveis.jsx` - Gerenciamento de estado e operações
+
+#### Configurações Otimizadas
+- **Jest**: Configurado para transformar corretamente módulos expo-sqlite
+- **Mocks**: SQLite mockado adequadamente para testes
+
+### Benefícios Alcançados
+1. **Eliminação de Warnings**: Sem avisos de dependência circular
+2. **Navegação Limpa**: Sem conflitos de nomes de tela no Expo Router
+3. **Testes Estáveis**: Suite de testes robusta e consistente
+4. **Arquitetura Sustentável**: Código mais manutenível e escalável
+5. **Configuração Robusta**: Build e teste configurados adequadamente
+
 ---

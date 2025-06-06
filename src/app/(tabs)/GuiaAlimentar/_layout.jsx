@@ -13,7 +13,7 @@ const GuiaAlimentarNav = () => {
         title={true}
       />
       <Stack.Screen
-        name="GuiaAlimentar"
+        name="GuiaAlimentarHome"
         options={{ headerShown: false }}
         title={true}
       />

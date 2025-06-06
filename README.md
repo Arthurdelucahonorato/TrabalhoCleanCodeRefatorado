@@ -55,11 +55,6 @@ code .
 
 ### Desenvolvimento
 - **`npm start`**: Inicia o servidor de desenvolvimento Expo
-- **`npm run start:clean`**: Inicia com cache limpo (recomendado para warnings)
-- **`npm run android`**: Executa no emulador Android
-- **`npm run android:clean`**: Executa no Android com cache limpo
-- **`npm run ios`**: Executa no simulador iOS
-- **`npm run web`**: Executa no navegador web
 
 ### Qualidade de Código
 - **`npm run lint`**: Verifica problemas de código com ESLint
@@ -97,7 +92,7 @@ O projeto possui um workflow do GitHub Actions que executa automaticamente o lin
 
 ## 🧪 Testes Automatizados
 
-O projeto possui uma suíte completa de testes automatizados com **99.16% de cobertura**.
+O projeto possui uma suíte completa de testes automatizados com **cobertura superior a 99%**.
 
 ### 📊 Cobertura de Testes
 
@@ -105,7 +100,8 @@ O projeto possui uma suíte completa de testes automatizados com **99.16% de cob
 - **Branches**: 100%
 - **Functions**: 96.66%
 - **Lines**: 99.15%
-- **Total de Testes**: 129 testes passando
+- **Total de Testes**: **207 testes passando**
+- **Suites de Teste**: **16 arquivos de teste**
 
 ### 🚀 Executando os Testes
 
@@ -124,9 +120,11 @@ npm run test:coverage
 
 ```
 __tests__/
+├── ApiRequestBuilder.test.jsx         # Builder para API requests
 ├── Botoes.test.jsx                    # Componente de botões
 ├── Cards.test.jsx                     # Cards de refeições
 ├── ChamaApi.test.jsx                  # Integração com API
+├── ChamaApiFluent.test.jsx           # API com interface fluente
 ├── Colors.test.jsx                    # Constantes de cores
 ├── FormularioFisico.test.jsx          # Formulário físico
 ├── FormularioGeral.test.jsx           # Formulário geral
@@ -135,7 +133,9 @@ __tests__/
 ├── FormularioProblemasAlimentares.test.jsx # Formulário alergias
 ├── Header.test.jsx                    # Componente de header
 ├── JanelaAtual.test.jsx              # Janela atual
-└── useLoadFonts.test.jsx             # Hook de fontes
+├── useLoadFonts.test.jsx             # Hook de fontes
+├── UserDataBuilder.test.jsx          # Builder para dados do usuário
+└── variaveis.test.jsx                # Variáveis globais de estado
 ```
 
 ### ✅ Componentes com 100% de Cobertura
@@ -175,27 +175,15 @@ Durante a execução do projeto (`npm start` + tecla 'A'), alguns avisos podem a
 ```
 ERROR ViewPropTypes will be removed from React Native
 ```
-**Status**: ✅ **Suprimido** - App funciona normalmente
 **Causa**: Expo Router usando ViewPropTypes deprecated
-**Solução**: Configurado `metro.config.js` para filtrar warnings não críticos
 
 #### 2. **Node.js Deprecation Warnings**
 ```
 DeprecationWarning: The `punycode` module is deprecated
 DeprecationWarning: The `util.isArray` API is deprecated
 ```
-**Status**: ✅ **Suprimido** - Warnings do sistema
 **Causa**: Dependências internas do Expo/Metro bundler
-**Solução**: Filtrados automaticamente pelo Metro config
 
-### 🔧 Supressão de Warnings
-
-Para uma experiência de desenvolvimento mais limpa, implementamos filtros automáticos:
-
-- **Warnings suprimidos**: ViewPropTypes, punycode, util.isArray
-- **Warnings preservados**: Erros críticos, problemas de código
-- **Scripts disponíveis**: `npm run start:clean` e `npm run android:clean`
-- **Configuração**: `metro.config.js` com filtros específicos
 
 #### 3. **Require Cycle Warning**
 ```
@@ -214,3 +202,4 @@ WARN Require cycle: database\variaveis.jsx -> database\database.jsx
 ## 📚 Documentação Adicional
 
 - [CHANGELOG.md](./CHANGELOG.md) - Histórico de mudanças e refatorações
+- [IntefaceFluente](./docs/InterfaceFluente.md) - Explicação detalhada sobre a aplicação de interfaces fluentes

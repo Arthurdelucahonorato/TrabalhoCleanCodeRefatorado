@@ -37,13 +37,13 @@ import {
   inserirOuAtualizarLista,
 } from '../database/variaveis';
 
-jest.mock('../database/database', () => ({
+jest.mock('../database/config', () => ({
   db: {
     transaction: jest.fn(),
   },
 }));
 
-import { db } from '../database/database';
+import { db } from '../database/config';
 
 describe('Variáveis de Estado Global', () => {
   beforeEach(() => {

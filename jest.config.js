@@ -5,7 +5,7 @@ module.exports = {
     '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
   },
   transformIgnorePatterns: [
-    'node_modules/(?!(react-native|@react-native|expo|@expo|@react-native-community|@testing-library/react-native|react-native-reanimated|react-native-vector-icons)/)',
+    'node_modules/(?!(react-native|@react-native|expo|@expo|expo-sqlite|@react-native-community|@testing-library/react-native|react-native-reanimated|react-native-vector-icons)/)',
   ],
   testPathIgnorePatterns: [
     '<rootDir>/node_modules/',
